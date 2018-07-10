@@ -6,8 +6,8 @@
                     
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">{{message}} </p>
-                    <p class="subtitle is-6">{{content}} {{call}}回</p>
+                    <p class="title is-4">{{content}} </p>
+                    <p class="subtitle is-6">メッセージ:{{message}} {{call}}回</p>
                 </div>
                 <div class="media-right">
                     <button class="button is-danger" @click="remove">

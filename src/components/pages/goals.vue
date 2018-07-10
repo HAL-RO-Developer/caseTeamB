@@ -49,7 +49,6 @@ export default {
       title: "目標一覧",
       fabIcon: "plus",
       goals: [],
-      //child_goals: [],
       selected: "",
       isComponentModalActive: false,
       isLoading: false
@@ -58,14 +57,13 @@ export default {
   methods: {
     getGoal() {
       this.isLoading = true;
-      http
-        .getGoal()
-        .then(response => {
+      http.getGoal()
+        .then((response) => {
           console.log(response);
           this.isLoading = false;
           this.goals = response.data.goals;
         })
-        .catch(err => {
+        .catch((err) => {
           this.isLoading = false;
           if (err) {
             this.$dialog.alert({
@@ -123,7 +121,7 @@ export default {
           }
         });
     },
-    removeGoal(id, content) {
+    removeGoal(goalid, content) {
       this.$dialog.confirm({
         title: "目標削除",
         message: "『" + content + "』を削除しますか？",
@@ -132,10 +130,10 @@ export default {
         hasIcon: true,
         onConfirm: () =>
           http
-            .removeGoal(id)
+            .removeGoal(goalid)
             .then(response => {
               var goal_id = localStorage.getItem("goal_id");
-              if ((goal_id = id)) {
+              if ((goal_id = goalid)) {
                 localStorage.removeItem("goal_id");
               }
               this.getGoal();
@@ -162,9 +160,9 @@ export default {
             })
       });
     },
-    select(id) {
-      localStorage.setItem("goal_id", id);
-      this.selected = id;
+    select(goalid) {
+      localStorage.setItem("goal_id", goalid);
+      this.selected = goalid;
     }
   },
   created() {

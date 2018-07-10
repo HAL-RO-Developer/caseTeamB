@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from './components/pages/index.vue'
 import dashboad from './components/pages/dashboad.vue'
 import Login from './components/pages/login.vue'
 import Device from './components/pages/device.vue'
@@ -15,13 +14,11 @@ import NotFound from './components/pages/notFound.vue'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 
-Vue.component('index', Index)
-
 Vue.use(Buefy)
 Vue.use(VueRouter)
 
 const routes = [
-    { path: "/", component: Index },
+    { path: "/", component: dashboad },
     { path: "/login", component: Login },
     { path: "/device", component: Device },
     { path: "/records/:filter", component: Records },
