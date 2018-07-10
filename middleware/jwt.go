@@ -3,9 +3,9 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/HAL-RO-Developer/caseTeamB_server/controller/response"
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
-	"github.com/HAL-RO-Developer/caseTeamB_server/service"
+	"github.com/HAL-RO-Developer/caseTeamB/controller/response"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
+	"github.com/HAL-RO-Developer/caseTeamB/service"
 	"github.com/gin-gonic/gin"
 	"github.com/makki0205/gojwt"
 )

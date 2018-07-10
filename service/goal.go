@@ -5,8 +5,8 @@ import (
 
 	"sync"
 
-	"github.com/HAL-RO-Developer/caseTeamB_server/controller/validation"
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
+	"github.com/HAL-RO-Developer/caseTeamB/controller/validation"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 var approvalM = new(sync.Mutex)

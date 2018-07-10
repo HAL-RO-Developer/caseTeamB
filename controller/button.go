@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"github.com/HAL-RO-Developer/caseTeamB_server/controller/response"
-	"github.com/HAL-RO-Developer/caseTeamB_server/controller/validation"
-	"github.com/HAL-RO-Developer/caseTeamB_server/service"
+	"github.com/HAL-RO-Developer/caseTeamB/controller/response"
+	"github.com/HAL-RO-Developer/caseTeamB/controller/validation"
+	"github.com/HAL-RO-Developer/caseTeamB/service"
 	"github.com/gin-gonic/gin"
 	"github.com/satori/go.uuid"
 	_ "github.com/satori/go.uuid"

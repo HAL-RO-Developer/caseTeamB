@@ -1,6 +1,6 @@
 package main
 
-import "github.com/HAL-RO-Developer/caseTeamB_server/router"
+import "github.com/HAL-RO-Developer/caseTeamB/router"
 
 func main() {
 	r := router.GetRouter()

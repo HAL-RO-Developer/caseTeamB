@@ -3,8 +3,8 @@ package service
 import (
 	"time"
 
-	"github.com/HAL-RO-Developer/caseTeamB_server/controller/validation"
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
+	"github.com/HAL-RO-Developer/caseTeamB/controller/validation"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 // 子ども情報取得
