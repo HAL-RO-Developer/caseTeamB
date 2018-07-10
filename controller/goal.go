@@ -75,6 +75,9 @@ func (g *goalimpl) GetGoal(c *gin.Context) {
 		// ボタンIDを検索
 		goals, find := service.GetGoalForChild(name, children[i].ChildId)
 		if !find {
+			childGoal.ChildId = children[i].ChildId
+			childData, _ = service.GetByChildInfo(name, children[i].ChildId)
+			childGoal.Nickname = childData[0].NickName
 			userGoal = append(userGoal, childGoal)
 		} else {
 			childGoal.ChildId = children[i].ChildId
