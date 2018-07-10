@@ -1,6 +1,6 @@
 <template>
     <footer id="app-footer" class="modal-card-foot">
-        <div class="buttons has-addons">
+        <div class="buttons is-left">
             <span class="button" @click="$router.go(-1)">戻る</span>
         </div>
     </footer>
@@ -21,19 +21,8 @@ export default {
     #app-footer{
         display: block;
         position: fixed;
-        width: 100vw;
-        height: 10vh;
-        padding: 0vh;
-        bottom: 8vh;
+        width: 100%;
+        bottom: 40px;
         left:0px;
-    }
-    #app-footer .buttons{
-        display: block;
-        position: relative;
-        height: 10vh;
-    }
-    #app-footer .buttons .button{
-        height: 6vh;
-        margin: 2vh;
     }
 </style>

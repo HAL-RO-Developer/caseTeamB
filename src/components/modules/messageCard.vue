@@ -2,7 +2,8 @@
     <div class="card">
         <div class="card-content" >
             <div class="media">
-                <div class="media-left"> 
+                <div class="media-left">
+                    
                 </div>
                 <div class="media-content">
                     <p class="title is-4">{{content}} </p>
@@ -19,20 +20,22 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      options: {
-        condition: []
-      }
-    };
-  },
-  methods: {
-    edit() {},
-    remove() {
-      this.$emit("remove", this.id, this.call, this.content);
+    export default {
+        data() {
+            return {
+                options: {
+                    condition:[
+
+                    ]
+                }
+            }
+        },
+        methods:{
+            edit(){},
+            remove(){
+                this.$emit('remove', this.id,this.call,this.content )
+            }
+        },
+        props:['content','call','message','id']
     }
-  },
-  props: ["content", "call", "message", "id"]
-};
 </script>

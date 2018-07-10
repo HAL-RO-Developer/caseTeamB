@@ -19,11 +19,9 @@ export default {
     #app-header{
         display: block;
         position: fixed;
-        width: 100vw;
-        height: 10vh;
+        width: 100%;
         top: 0px;
         left:0px;
-        margin: 0px;
         margin-bottom: 5%;
     }
 </style>

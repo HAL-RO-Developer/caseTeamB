@@ -49,7 +49,6 @@ export default {
       title: "目標一覧",
       fabIcon: "plus",
       goals: [],
-      child_id: "",
       //child_goals: [],
       selected: "",
       isComponentModalActive: false,
@@ -91,16 +90,16 @@ export default {
     addGoal(data) {
       this.isComponentModalActive = false;
       var deadline = moment(data.deadline);
+      var child_id = localStorage.getItem("child_id");
       console.log(data);
       http
         .addGoal(
-          Number(this.child_id),
+          Number(child_id),
           data.content,
           Number(data.criteria),
           deadline.format("YYYY-MM-DD")
         )
         .then(response => {
-          console.log(response);
           this.getGoal();
         })
         .catch(err => {
@@ -169,8 +168,7 @@ export default {
     }
   },
   created() {
-    this.selected = localStorage.getItem('goal_id');
-    this.child_id = localStorage.getItem('child_id');
+    this.selected = localStorage.getItem("goal_id");
     this.getGoal();
   }
 };
