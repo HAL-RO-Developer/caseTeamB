@@ -3,7 +3,7 @@ package service
 import (
 	"time"
 
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 var User = user{}

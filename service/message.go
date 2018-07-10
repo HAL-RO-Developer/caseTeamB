@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 // メッセージ新規登録

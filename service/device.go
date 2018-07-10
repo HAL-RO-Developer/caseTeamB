@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/HAL-RO-Developer/caseTeamB_server/model"
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 var RegistInfo []deviceInfo
