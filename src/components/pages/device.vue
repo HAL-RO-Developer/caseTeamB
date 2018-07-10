@@ -165,7 +165,7 @@ export default {
     }
   },
   created() {
-    this_child_id = localStorage.getItem('child_id');
+    this.child_id = localStorage.getItem('child_id');
     this.goal_id = localStorage.getItem('goal_id');
     this.getDevice();
   }
