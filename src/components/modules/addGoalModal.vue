@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       data: {
-        child_id: null,
+        child_id: 0,
         content: "",
         criteria: null,
         deadline: new Date()

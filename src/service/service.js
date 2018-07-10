@@ -8,9 +8,9 @@ class Http {
 
     Load() {
         this.api = axios.create({
-            baseURL: 'http://localhost:8080',
+            //baseURL: 'http://localhost:8080',
             //baseURL: 'https://caseteamaserver-lyozxwqhak.now.sh',
-            //baseURL: localStorage.getItem('server'),
+            baseURL: localStorage.getItem('server'),
             headers: {
                 'ContentType': 'application/json',
                 'Authorization': this.GetToken()
@@ -116,7 +116,7 @@ class Http {
     }
     // メッセージ削除
     removeMessage(goal_id, message_call) {
-        return this.api.delete('/message/' + goal_id +'/'+ message_call)
+        return this.api.delete('/message/' + goal_id + '/' + message_call)
     }
 }
 var http = new Http()
