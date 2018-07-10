@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Index from './components/pages/index.vue'
 //import dashboad from './components/pages/dashboad.vue'
 import Login from './components/pages/login.vue'
-//import Device from './components/pages/device.vue'
+import Device from './components/pages/device.vue'
 //import Records from './components/pages/records.vue'
 //import SolvedList from './components/pages/solvedList.vue'
 //import Settings from './components/pages/settings.vue'
@@ -23,7 +23,7 @@ Vue.use(VueRouter)
 const routes = [
     { path: "/", component: Index },
     { path: "/login", component: Login },
- //   { path: "/device", component: Device },
+    { path: "/device", component: Device },
  //   { path: "/records/:filter", component: Records },
  //   { path: "/records/:filter/:date", component: SolvedList },
  //   { path: "/settings", component: Settings },

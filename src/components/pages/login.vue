@@ -74,7 +74,7 @@ export default {
             http.signin(this.name, this.password)
             .then((response)=> { 
                 http.SetToken(response.data.token);
-                this.$router.push({ path: '/' })
+                this.$router.push({ path: '/device' })
             })
             .catch((err)=> {
                 if(err){
