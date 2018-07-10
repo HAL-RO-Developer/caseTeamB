@@ -97,7 +97,7 @@ export default {
                 });
         },
         registDevice(){
-            http.registDevice(this.goal_id)
+            http.registDevice(Number(this.child_id))
                 .then((response)=>{
                     console.log(response.data)
                     this.pin = response.data.pin
@@ -161,7 +161,7 @@ export default {
         }
     },
     created(){
-        this.goal_id = localStorage.getItem('goal_id')
+        this.child_id = localStorage.getItem('child_id')
         this.getDevice()
     }
 }
