@@ -46,7 +46,7 @@ export default {
     data() {
         return {
             title: "デバイス追加",
-            child_id: "",
+            goal_id: "",
             pin: "",
             devices: {},
             fabIcon: "sync",
@@ -69,7 +69,7 @@ export default {
                     this.isLoading = false
                     var devices = response.data.devices
                     devices.forEach((device)=>{
-                        if(device.child_id == this.child_id){
+                        if(device.goal_id == this.goal_id){
                             this.devices = device
                         }
                     })
@@ -97,7 +97,7 @@ export default {
                 });
         },
         registDevice(){
-            http.registDevice(Number(this.child_id))
+            http.registDevice(this.goal_id)
                 .then((response)=>{
                     console.log(response.data)
                     this.pin = response.data.pin
@@ -161,7 +161,7 @@ export default {
         }
     },
     created(){
-        this.child_id = localStorage.getItem('child_id')
+        this.goal_id = localStorage.getItem('goal_id')
         this.getDevice()
     }
 }
