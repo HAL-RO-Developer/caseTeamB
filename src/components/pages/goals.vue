@@ -49,6 +49,8 @@ export default {
       title: "目標一覧",
       fabIcon: "plus",
       goals: [],
+      child_id: "",
+      //child_goals: [],
       selected: "",
       isComponentModalActive: false,
       isLoading: false
@@ -57,13 +59,14 @@ export default {
   methods: {
     getGoal() {
       this.isLoading = true;
-      http.getGoal()
-        .then((response) => {
+      http
+        .getGoal()
+        .then(response => {
           console.log(response);
           this.isLoading = false;
           this.goals = response.data.goals;
         })
-        .catch((err) => {
+        .catch(err => {
           this.isLoading = false;
           if (err) {
             this.$dialog.alert({
@@ -88,16 +91,16 @@ export default {
     addGoal(data) {
       this.isComponentModalActive = false;
       var deadline = moment(data.deadline);
-      var child_id = localStorage.getItem("child_id");
       console.log(data);
       http
         .addGoal(
-          Number(child_id),
+          Number(this.child_id),
           data.content,
           Number(data.criteria),
           deadline.format("YYYY-MM-DD")
         )
         .then(response => {
+          console.log(response);
           this.getGoal();
         })
         .catch(err => {
@@ -121,7 +124,7 @@ export default {
           }
         });
     },
-    removeGoal(goalid, content) {
+    removeGoal(id, content) {
       this.$dialog.confirm({
         title: "目標削除",
         message: "『" + content + "』を削除しますか？",
@@ -130,10 +133,10 @@ export default {
         hasIcon: true,
         onConfirm: () =>
           http
-            .removeGoal(goalid)
+            .removeGoal(id)
             .then(response => {
               var goal_id = localStorage.getItem("goal_id");
-              if ((goal_id = goalid)) {
+              if ((goal_id = id)) {
                 localStorage.removeItem("goal_id");
               }
               this.getGoal();
@@ -160,13 +163,14 @@ export default {
             })
       });
     },
-    select(goalid) {
-      localStorage.setItem("goal_id", goalid);
-      this.selected = goalid;
+    select(id) {
+      localStorage.setItem("goal_id", id);
+      this.selected = id;
     }
   },
   created() {
     this.selected = localStorage.getItem("goal_id");
+    this.child_id = localStorage.getItem("child_id");
     this.getGoal();
   }
 };
