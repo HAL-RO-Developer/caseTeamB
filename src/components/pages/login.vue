@@ -47,7 +47,16 @@ export default {
         signup(){
             http.signup(this.name, this.password)
             .then((response)=>{
-                signin()
+                console.log(response)
+                this.$dialog.alert({
+                        title: 'ユーザー作成',
+                        message: response.data.success,
+                        type: 'is-info',
+                        hasIcon: true,
+                        icon: 'times-circle',
+                        iconPack: 'fa'
+                })
+                this.signin()
             })
             .catch((err)=>{
                 if(err){
@@ -74,7 +83,7 @@ export default {
             http.signin(this.name, this.password)
             .then((response)=> { 
                 http.SetToken(response.data.token);
-                this.$router.push({ path: '/device' })
+                this.$router.push({ path: '/' })
             })
             .catch((err)=> {
                 if(err){
