@@ -130,11 +130,13 @@ func (u *userimpl) DeleteChild(c *gin.Context) {
 		return
 	}
 
+	// デバイス削除
 	devices, _ := service.GetDeviceIdFromChildId(name, childId)
 	for i := 0; i < len(devices); i++ {
 		service.DeleteDeviceId(name, devices[i].DeviceId)
 	}
 
+	// 目標削除
 	goals, find := service.GetGoalForChild(name, childId)
 	if find {
 		for i := 0; i < len(goals); i++ {
@@ -142,6 +144,7 @@ func (u *userimpl) DeleteChild(c *gin.Context) {
 		}
 	}
 
+	// メッセージ削除
 	messages, find := service.GetMessageFromNameChild(name, childId)
 	if find {
 		for i := 0; i < len(messages); i++ {
