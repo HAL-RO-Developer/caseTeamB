@@ -122,13 +122,19 @@ func (g *goalimpl) DeleteGoal(c *gin.Context) {
 	}
 
 	goalId := c.Param("goal_id")
-
+	
+	// メッセージ削除
+	messages, find := service.GetMessageFromGoal(goalId)
+	if find {
+		for i := 0; i < len(messages); i++ {
+			service.DeleteMessageFromGoal(goalId)
+		}
+	}
 	// 目標の削除
 	if service.DeleteGoal(goalId) {
 		response.Json(gin.H{"success": "目標を削除しました。"}, c)
 		return
 	}
+	
 	response.BadRequest(gin.H{"error": "目標が見つかりません。"}, c)
 }
-
-//

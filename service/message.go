@@ -77,6 +77,17 @@ func DeleteMessage(goalId string, messageCall int) bool {
 	return true
 }
 
+// メッセージ削除
+func DeleteMessageFromGoal(goalId string) bool {
+	var data model.CustomMessage
+	err := db.Where("goal_id = ?", goalId).First(&data).Error
+	if err != nil {
+		return false
+	}
+	db.Delete(data)
+	return true
+}
+
 // メッセージ削除(子どもごと)
 func DeleteMessageFromChild(name string, childId int) bool {
 	var data model.CustomMessage
