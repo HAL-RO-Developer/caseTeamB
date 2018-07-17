@@ -40,7 +40,8 @@ export default {
     data() {
         return {
             name: "",
-            password: ""
+            password: "" ,
+            flag : 0
         }
     },
     methods:{
@@ -56,6 +57,7 @@ export default {
                         icon: 'times-circle',
                         iconPack: 'fa'
                 })
+                this.flag = 1;
                 this.signin()
             })
             .catch((err)=>{
@@ -83,7 +85,11 @@ export default {
             http.signin(this.name, this.password)
             .then((response)=> { 
                 http.SetToken(response.data.token);
+                if(this.flag == 1){
+                this.$router.push({ path: '/children' })
+                }else {
                 this.$router.push({ path: '/' })
+                }
             })
             .catch((err)=> {
                 if(err){
