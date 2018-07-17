@@ -10,7 +10,9 @@
                 :nickname="goal.nickname"
                 :content="child_goal.content" 
                 :run="child_goal.run"
+                :criteria="child_goal.criteria"
                 :selected="selected"
+                @info="chengeAppro"
                 @remove="removeGoal"
                 @select="select"></card>
             </div>
@@ -163,9 +165,15 @@ export default {
             })
       });
     },
+    chengeAppro(data){
+      
+    },
     select(id) {
       localStorage.setItem("goal_id", id);
       this.selected = id;
+    },
+    GoalDetails(id){
+      this.$router.push({path:"goals/details"});
     }
   },
   created() {
