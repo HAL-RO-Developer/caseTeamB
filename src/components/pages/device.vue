@@ -181,4 +181,8 @@ button {
   overflow: auto;
   height: 43vh;
 }
+body{
+  background-color: #ECF4FF;
+}
+
 </style>
