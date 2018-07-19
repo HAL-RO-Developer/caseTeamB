@@ -10,7 +10,7 @@ import Goals from './components/pages/goalsettings.vue'
 import GoalList from './components/pages/goals.vue'
 //import GoalAppro from '.components/pages/goalappro.vue'
 import Messages from './components/pages/messages.vue'
-//import Manual from './components/pages/Manual.vue'
+import Manual from './components/pages/Manual.vue'
 import NotFound from './components/pages/notFound.vue'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
@@ -29,7 +29,7 @@ const routes = [
     { path: "/goals/list", component: GoalList },
     // { path: "/goals/appro", component: GoalAppro },
     { path: "/messages", component: Messages },
-    // { path: "/manual", component: Manual },
+    { path: "/manual", component: Manual },
     { path: "*", component: NotFound },
 ]
 const router = new VueRouter({ mode: 'history', routes })

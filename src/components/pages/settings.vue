@@ -1,11 +1,14 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+    <div>
+        <header class="modal-card-head" id="titlesett">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <div class="buttons" v-for="item in menu_items" :key="item.id">
                 <span class="button full-width" @click="click(item.id)">{{item.title}}</span>
             </div>
         </div>
+        <app-footer id="footersett"></app-footer>
         <under-tab :index='2'></under-tab>
     </div>
 </template>
@@ -56,4 +59,7 @@ export default {
 </script>
 
 <style>
+#titlesett,#footersett{
+    background: aqua
+}
 </style>

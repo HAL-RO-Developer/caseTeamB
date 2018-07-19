@@ -1,9 +1,12 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+    <div>
+         <header class="modal-card-head" id="titlemanual">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
+
         <div class="contents">
         </div>
-        <app-footer></app-footer>
+        <app-footer id="footermanual"></app-footer>
         <under-tab :index='2'></under-tab>
     </div>
 </template>
@@ -31,3 +34,8 @@
         }
     }
 </script>
+<style>
+#titlemanual,#footermanual{
+ background: royalblue
+}
+</style>

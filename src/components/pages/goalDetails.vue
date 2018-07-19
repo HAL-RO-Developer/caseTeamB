@@ -1,6 +1,8 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+    <div >
+                    <header class="modal-card-head" id="titlegoaldeta">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <b-field>
               <b-select placeholder="Select a child" v-model="child_id" @input="aggregate"> 
@@ -11,7 +13,7 @@
             <!--<by-month ref="month" v-if="filter=='month'" :isLoading="isLoading" @isLoading="isLoading=false"></by-month>-->
             <graph :chartData='chartData' :options='settings' :width="900" :height="750"></graph>
         </div> 
-        <app-footer></app-footer>
+        <app-footer id="footergoaldeta"></app-footer>
         <under-tab :index='1'></under-tab>
     </div>
 </template>
@@ -155,4 +157,7 @@ export default {
 </script>
 
 <style>
+#titlegoaldeta,#footergoaldeta{
+background: coral
+}
 </style>
