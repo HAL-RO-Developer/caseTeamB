@@ -168,15 +168,57 @@ export default {
             })
       });
     },
-    chengeAppro(data){
-      this.$router.push({path:"goals/details"});
+    chengeAppro(id, approval) {
+      this.$dialog.prompt({
+        title: "目標達成数変更",
+        message: "『" + id + "』を変更しますか？",
+        inputAttrs: {
+          type: "number",
+          placeholder: "目標達成数",
+          value: "0",
+          maxlength: 2,
+          min: 0
+        },
+        confirmText: "変更",
+        hasIcon: true,
+        onConfirm: () =>
+          http
+            .putAchieved(id, approval)
+            .then(response => {
+              var goal_id = localStorage.getItem("goal_id");
+              if ((goal_id = id)) {
+
+              }
+              this.getGoal();
+            })
+            .catch(err => {
+              if (err) {
+                this.$dialog.alert({
+                  title: "Error",
+                  message: err.response.data.error,
+                  type: "is-danger",
+                  hasIcon: true,
+                  icon: "times-circle",
+                  iconPack: "fa"
+                });
+                switch (err.response.status) {
+                  case 401:
+                    http.RemoveToken();
+                    this.$router.push({ path: "/" });
+                    break;
+                  default:
+                    break;
+                }
+              }
+            })
+      });
     },
     select(id) {
       localStorage.setItem("goal_id", id);
       this.selected = id;
     },
-    GoalDetails(id){
-      this.$router.push({path:"goals/details"});
+    GoalDetails(id) {
+      this.$router.push({ path: "goals/details" });
     }
   },
   created() {
@@ -188,7 +230,8 @@ export default {
 </script>
 
 <style>
-#titlegoal,#footergoal{
-    background: lightcoral
+#titlegoal,
+#footergoal {
+  background: lightcoral;
 }
 </style>

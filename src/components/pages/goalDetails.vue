@@ -1,8 +1,8 @@
 <template>
-    <div >
-                    <header class="modal-card-head" id="titlegoaldeta">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
+    <div>
+      <header class="modal-card-head" id="titlegoaldeta">
+        <p class="modal-card-title">{{title}}</p>
+      </header>
         <div class="contents">
             <b-field>
               <b-select placeholder="Select a child" v-model="child_id" @input="aggregate"> 
@@ -111,21 +111,21 @@ export default {
     },
     aggregate() {
       var labels = [];
-      var data = [13, 20, 16];
+      var data = [];
 
       var child = this.goals.find(item => {
         if (item.child_id == this.child_id) return true;
       });
       child.child_goals.forEach(item => {
-        labels.push(item.content);
-        //data.push(item.run)
+        labels.push(item.content)
+        data.push(item.run)
       });
 
       console.log(labels);
       console.log(data);
       var datasets = [
         {
-          label: "回数",
+          label: "実行数",
           type: "bar",
           data: data
         }
