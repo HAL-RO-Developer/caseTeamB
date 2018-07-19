@@ -1,6 +1,8 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titlechild"></app-header>
+    <div>
+            <header class="modal-card-head" id="titlechild">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
             <card v-for="(child, index) in children" 

@@ -1,6 +1,6 @@
 <template>
     <form action="">
-        <div class="modal-card" style="width: auto">
+        <div>
             <header class="modal-card-head" id="titlelogin">
                 <p class="modal-card-title">ログイン</p>
             </header>

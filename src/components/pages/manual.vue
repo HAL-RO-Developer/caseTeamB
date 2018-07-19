@@ -1,6 +1,9 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titlemanual"></app-header>
+    <div>
+         <header class="modal-card-head" id="titlemanual">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
+
         <div class="contents">
         </div>
         <app-footer id="footermanual"></app-footer>

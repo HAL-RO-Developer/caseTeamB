@@ -1,6 +1,8 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titledevice"></app-header>
+    <div>
+                    <header class="modal-card-head" id="titledevice">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <button class="button is-medium is-primary full-width" type="button" @click="registDevice">PINコード発行</button>
             <section class="modal-card-body">

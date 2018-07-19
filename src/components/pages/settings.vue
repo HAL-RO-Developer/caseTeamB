@@ -1,6 +1,8 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titlesett"></app-header>
+    <div>
+        <header class="modal-card-head" id="titlesett">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <div class="buttons" v-for="item in menu_items" :key="item.id">
                 <span class="button full-width" @click="click(item.id)">{{item.title}}</span>

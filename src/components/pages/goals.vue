@@ -1,6 +1,9 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titlegoal"></app-header>
+    <div>
+             <header class="modal-card-head" id="titlegoal">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
+       
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
             <div v-for='goal in goals'>

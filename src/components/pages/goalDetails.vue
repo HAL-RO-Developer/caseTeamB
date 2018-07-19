@@ -1,6 +1,8 @@
 <template>
-    <div class="modal-card" style="width: auto">
-        <app-header :title='title' id="titlegoaldeta"></app-header>
+    <div >
+                    <header class="modal-card-head" id="titlegoaldeta">
+                <p class="modal-card-title">{{title}}</p>
+            </header>
         <div class="contents">
             <b-field>
                 <b-select placeholder="Select a filter" v-model="filter" @input="getRecords"> 
