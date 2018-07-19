@@ -1,6 +1,6 @@
 <template>
    <div>
-          <header class="modal-card-head" id="titlemessage">
+          <header class="modal-card-head" style="background: lime">
                 <p class="modal-card-title">{{title}}</p>
             </header>
            
@@ -18,7 +18,7 @@
             </div>    
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer id="footermessage"></app-footer>
+        <app-footer style="background: lime"></app-footer>
         <under-tab :index='2'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addMessage"></modal-form>
@@ -162,8 +162,3 @@ export default {
 };
 </script>
 
-<style>
-#titlemessage,#footermessage{
-background: lime
-}
-</style>

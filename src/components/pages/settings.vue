@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="modal-card-head" id="titlesett">
+        <header class="modal-card-head" style="background: aqua">
                 <p class="modal-card-title">{{title}}</p>
             </header>
         <div class="contents">
@@ -57,8 +57,3 @@ export default {
 }
 </script>
 
-<style>
-#titlesett,#footersett{
-    background: aqua
-}
-</style>

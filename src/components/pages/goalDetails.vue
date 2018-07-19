@@ -1,6 +1,6 @@
 <template>
     <div>
-      <header class="modal-card-head" id="titlegoaldeta">
+      <header class="modal-card-head" style="background: coral">
         <p class="modal-card-title">{{title}}</p>
       </header>
         <div class="contents">
@@ -13,7 +13,7 @@
             <!--<by-month ref="month" v-if="filter=='month'" :isLoading="isLoading" @isLoading="isLoading=false"></by-month>-->
             <graph :chartData='chartData' :options='settings' :width="900" :height="750"></graph>
         </div> 
-        <app-footer id="footergoaldeta"></app-footer>
+        <app-footer style="background: coral"></app-footer>
         <under-tab :index='1'></under-tab>
     </div>
 </template>
@@ -156,8 +156,4 @@ export default {
 };
 </script>
 
-<style>
-#titlegoaldeta,#footergoaldeta{
-background: coral
-}
-</style>
+

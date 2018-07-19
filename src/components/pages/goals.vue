@@ -1,6 +1,6 @@
 <template>
     <div>
-             <header class="modal-card-head" id="titlegoal">
+             <header class="modal-card-head" style=" background: lightcoral">
                 <p class="modal-card-title">{{title}}</p>
             </header>
        
@@ -21,7 +21,7 @@
             </div>
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer id="footergoal"></app-footer>
+        <app-footer style=" background: lightcoral"></app-footer>
         <under-tab :index='1'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addGoal"></modal-form>
@@ -228,10 +228,3 @@ export default {
   }
 };
 </script>
-
-<style>
-#titlegoal,
-#footergoal {
-  background: lightcoral;
-}
-</style>

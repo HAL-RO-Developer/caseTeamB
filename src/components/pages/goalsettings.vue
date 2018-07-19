@@ -1,6 +1,6 @@
 <template>
     <div>
-      <header class="modal-card-head" id="titlegoal">
+      <header class="modal-card-head"style="background: lightcoral">
                 <p class="modal-card-title">{{title}}</p>
             </header>
 
@@ -54,8 +54,3 @@ export default {
 };
 </script>
 
-<style>
-#titlegoal,#footergoal{
-    background: lightcoral
-}
-</style>

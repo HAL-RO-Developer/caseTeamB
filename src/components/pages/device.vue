@@ -1,6 +1,6 @@
 <template>
     <div>
-                    <header class="modal-card-head" id="titledevice">
+                    <header class="modal-card-head" style=" background: lightgreen">
                 <p class="modal-card-title">{{title}}</p>
             </header>
         <div class="contents">
@@ -181,8 +181,5 @@ button {
   position: relative;
   overflow: auto;
   height: 43vh;
-}
-#titledevice,#footerdevice{
-  background-color: lightgreen;
 }
 </style>
