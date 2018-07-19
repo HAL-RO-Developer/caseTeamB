@@ -30,7 +30,4 @@ export default {
 }
 </script>
 <style>
-#titledash{
-    background: lightcoral
-}
-</style>
+

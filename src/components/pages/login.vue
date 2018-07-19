@@ -1,7 +1,7 @@
 <template>
     <form action="">
         <div>
-            <header class="modal-card-head" id="titlelogin">
+            <header class="modal-card-head" style="background: mistyrose">
                 <p class="modal-card-title">ログイン</p>
             </header>
             <section class="modal-card-body">
@@ -24,7 +24,7 @@
                     </b-input>
                 </b-field>
             </section>
-            <footer class="modal-card-foot" id="footerlogin">
+            <footer class="modal-card-foot" style="background: mistyrose">
                 <button class="button" type="button" @click="signup">新規登録</button>
                 <button class="button" type="button" @click="signin">ログイン</button>
             </footer>
@@ -114,8 +114,3 @@ export default {
 }
 </script>
 
-<style>
-#titlelogin,#footerlogin{
-background: mistyrose
-}
-</style>

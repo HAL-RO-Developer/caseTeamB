@@ -1,6 +1,6 @@
 <template>
     <div>
-                    <header class="modal-card-head" id="titledevice">
+                    <header class="modal-card-head" style=" background: lightgreen">
                 <p class="modal-card-title">{{title}}</p>
             </header>
         <div class="contents">
@@ -24,7 +24,6 @@
             </div>
         </div>
         <fab :icon="fabIcon" @click="getDevice"></fab>
-        <app-footer id="footerdevice"></app-footer>
         <under-tab :index='0'></under-tab>
     </div>
 </template>
@@ -182,8 +181,5 @@ button {
   position: relative;
   overflow: auto;
   height: 43vh;
-}
-#titledevice{
-  background-color: lightgreen;
 }
 </style>

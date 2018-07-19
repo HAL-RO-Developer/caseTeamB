@@ -1,6 +1,6 @@
 <template>
     <div>
-            <header class="modal-card-head" id="titlechild">
+            <header class="modal-card-head" style="background: skyblue">
                 <p class="modal-card-title">{{title}}</p>
             </header>
         <div class="contents">
@@ -15,7 +15,7 @@
                 @select="select"></card>
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer id="footerchild"></app-footer>
+        <app-footer style="background: skyblue"></app-footer>
         <under-tab :index='2'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addChild"></modal-form>
@@ -164,8 +164,3 @@ export default {
 }
 </script>
 
-<style>
-#titlechild,#footerchild{
-    background: skyblue
-}
-</style>
