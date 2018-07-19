@@ -1,6 +1,6 @@
 <template>
     <div>
-      <header class="modal-card-head">
+      <header class="modal-card-head" id="titlegoal">
                 <p class="modal-card-title">{{title}}</p>
             </header>
 
@@ -9,7 +9,7 @@
                 <span class="button full-width" @click="click(item.id)">{{item.title}}</span>
             </div>
         </div>
-        <app-footer></app-footer>
+        <app-footer id="footergoal"></app-footer>
         <under-tab :index='2'></under-tab>
     </div>
 </template>
@@ -53,4 +53,7 @@ export default {
 </script>
 
 <style>
+#titlegoal,#footergoal{
+    background: lightcoral
+}
 </style>
