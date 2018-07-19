@@ -1,6 +1,6 @@
 <template>
     <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+        <app-header :title='title' id="titlegoaldeta"></app-header>
         <div class="contents">
             <b-field>
                 <b-select placeholder="Select a filter" v-model="filter" @input="getRecords"> 
@@ -11,7 +11,7 @@
             <by-month ref="month" v-if="filter=='month'" :isLoading="isLoading" @isLoading="isLoading=false"></by-month>
         </div>
         <fab icon="sync" @click="getRecords"></fab>    
-        <app-footer></app-footer>
+        <app-footer id="footergoaldeta"></app-footer>
         <under-tab :index='1'></under-tab>
     </div>
 </template>
@@ -88,4 +88,7 @@ export default {
 </script>
 
 <style>
+#titlegoaldeta,#footergoaldeta{
+background: coral
+}
 </style>

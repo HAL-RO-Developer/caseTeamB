@@ -25,7 +25,7 @@ const routes = [
     { path: "/children", component: Children },
     { path: "/goals", component: Goals },
     { path: "/messages", component: Messages },
-   // { path: "/manual", component: Manual },
+    { path: "/manual", component: Manual },
     { path: "*", component: NotFound },
 ]
 const router = new VueRouter({ mode: 'history', routes })
