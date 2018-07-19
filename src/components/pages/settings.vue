@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style>
-#titlesett,#footersett{
+#titlesett{
     background: aqua
 }
 </style>

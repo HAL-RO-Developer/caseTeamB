@@ -183,7 +183,7 @@ button {
   overflow: auto;
   height: 43vh;
 }
-#titledevice,#footerdevice{
+#titledevice{
   background-color: lightgreen;
 }
 </style>

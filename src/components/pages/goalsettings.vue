@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style>
-#titlegoal,#footergoal{
+#titlegoal{
     background: lightcoral
 }
 </style>
