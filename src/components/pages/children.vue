@@ -1,6 +1,6 @@
 <template>
     <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+        <app-header :title='title' id="titlechild"></app-header>
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
             <card v-for="(child, index) in children" 
@@ -13,7 +13,7 @@
                 @select="select"></card>
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer></app-footer>
+        <app-footer id="footerchild"></app-footer>
         <under-tab :index='2'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addChild"></modal-form>
@@ -163,4 +163,7 @@ export default {
 </script>
 
 <style>
+#titlechild,#footerchild{
+    background: skyblue
+}
 </style>

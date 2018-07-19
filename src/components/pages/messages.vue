@@ -1,6 +1,6 @@
 <template>
    <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>        
+        <app-header :title='title' id="titlemessage"></app-header>        
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
             <div v-for='message in messages'>
@@ -15,7 +15,7 @@
             </div>    
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer></app-footer>
+        <app-footer id="footermessage"></app-footer>
         <under-tab :index='2'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addMessage"></modal-form>
@@ -160,4 +160,7 @@ export default {
 </script>
 
 <style>
+#titlemessage,#footermessage{
+background: lime
+}
 </style>

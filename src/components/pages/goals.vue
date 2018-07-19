@@ -1,6 +1,6 @@
 <template>
     <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+        <app-header :title='title' id="titlegoal"></app-header>
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
             <div v-for='goal in goals'>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer></app-footer>
+        <app-footer id="footergoal"></app-footer>
         <under-tab :index='1'></under-tab>
         <b-modal :active.sync="isComponentModalActive" has-modal-card>
             <modal-form @add="addGoal"></modal-form>
@@ -185,4 +185,7 @@ export default {
 </script>
 
 <style>
+#titlegoal,#footergoal{
+    background: lightcoral
+}
 </style>

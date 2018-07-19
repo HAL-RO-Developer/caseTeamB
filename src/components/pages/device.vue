@@ -1,6 +1,6 @@
 <template>
     <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+        <app-header :title='title' id="titledevice"></app-header>
         <div class="contents">
             <button class="button is-medium is-primary full-width" type="button" @click="registDevice">PINコード発行</button>
             <section class="modal-card-body">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <fab :icon="fabIcon" @click="getDevice"></fab>
-        <app-footer></app-footer>
+        <app-footer id="footerdevice"></app-footer>
         <under-tab :index='0'></under-tab>
     </div>
 </template>
@@ -181,8 +181,7 @@ button {
   overflow: auto;
   height: 43vh;
 }
-body{
-  background-color: #ECF4FF;
+#titledevice,#footerdevice{
+  background-color: lightgreen;
 }
-
 </style>
