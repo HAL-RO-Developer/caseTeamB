@@ -166,7 +166,7 @@ export default {
       });
     },
     chengeAppro(data){
-      
+      this.$router.push({path:"goals/details"});
     },
     select(id) {
       localStorage.setItem("goal_id", id);

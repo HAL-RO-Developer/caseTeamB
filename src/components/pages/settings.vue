@@ -6,7 +6,6 @@
                 <span class="button full-width" @click="click(item.id)">{{item.title}}</span>
             </div>
         </div>
-        <app-footer></app-footer>
         <under-tab :index='2'></under-tab>
     </div>
 </template>

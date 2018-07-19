@@ -7,7 +7,7 @@
                 </div>
                 <div class="media-content">
                     <p class="title is-4">{{content}}</p>
-                    <p class="subtitle is-6">{{nickname}} {{run}}回 目標{{criteria}}回</p>
+                    <p class="subtitle is-6">{{nickname}} {{run}}回 目標 {{criteria}}回</p>
                 </div>
                 <b-icon v-if="selected==goalid" icon="check"></b-icon>
                 <div class="media-right">
