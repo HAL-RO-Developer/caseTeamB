@@ -10,6 +10,7 @@ import Goals from './components/pages/goalsettings.vue'
 import GoalList from './components/pages/goals.vue'
 //import GoalAppro from '.components/pages/goalappro.vue'
 import Messages from './components/pages/messages.vue'
+import GoalsSettings from './components/pages/goalsettings.vue'
 import Manual from './components/pages/Manual.vue'
 import NotFound from './components/pages/notFound.vue'
 import Buefy from 'buefy'
@@ -23,6 +24,7 @@ const routes = [
     { path: "/login", component: Login },
     { path: "/device", component: Device },
     { path: "/goals/graph", component: Details },
+    { path: "/goals/settings", component: GoalsSettings },
     { path: "/settings", component: Settings },
     { path: "/children", component: Children },
     { path: "/goals", component: Goals },
