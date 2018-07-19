@@ -1,9 +1,9 @@
 <template>
     <div class="modal-card" style="width: auto">
-        <app-header :title='title'></app-header>
+        <app-header :title='title' id="titlemanual"></app-header>
         <div class="contents">
         </div>
-        <app-footer></app-footer>
+        <app-footer id="footermanual"></app-footer>
         <under-tab :index='2'></under-tab>
     </div>
 </template>
@@ -31,3 +31,8 @@
         }
     }
 </script>
+<style>
+#titlemanual,#footermanual{
+ background: royalblue
+}
+</style>
