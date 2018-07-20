@@ -5,29 +5,25 @@
 </template>
 
 <script>
-import http from '../../service/service';
-import UnderTab from '../modules/underTab.vue'
+import http from "../../service/service";
+import UnderTab from "../modules/underTab.vue";
 
 export default {
-    name :"dashboad",
-    components:{
-        UnderTab
-    },
-    data() {
-        return {
-        }
-    },
-    methods:{
-        
-    },
-    created(){
-        if(!http.GetToken()){
-            this.$router.push({ path: '/login' })
-        }else{
-            this.$router.push({ path: '/device' })
-        }
+  name: "dashboad",
+  components: {
+    UnderTab
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  created() {
+    if (!http.GetToken()) {
+      this.$router.push({ path: "/login" });
+    } else {
+      this.$router.push({ path: "/device" });
     }
-}
+  }
+};
 </script>
 <style>
-

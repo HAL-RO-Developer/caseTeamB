@@ -6,7 +6,7 @@
            
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-            <div v-for='message in messages'>
+            <div v-for='message in messages' :key="message.id">
             <card v-for="(child_message, index) in message.child_messages" 
                 :key="index"
                 :content="child_message.content"
@@ -118,7 +118,7 @@ export default {
           }
         });
     },
-    removeMessage(id, call,content) {
+    removeMessage(id, call, content) {
       this.$dialog.confirm({
         title: "メッセージ削除",
         message: "『" + content + "の" + call + "回目" + "』を削除しますか？",

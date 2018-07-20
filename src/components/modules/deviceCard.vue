@@ -16,16 +16,15 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-            }
-        },
-        methods:{
-            remove(){
-                this.$emit('remove', this.deviceId )
-            }
-        },
-        props:['deviceId']
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    remove() {
+      this.$emit("remove", this.deviceId);
     }
+  },
+  props: ["deviceId"]
+};
 </script>
