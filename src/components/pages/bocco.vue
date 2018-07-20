@@ -27,7 +27,7 @@ import UnderTab from "../modules/underTab.vue";
 import AppHeader from "../modules/header.vue";
 import AppFooter from "../modules/footer.vue";
 import Card from "../modules/boccoCard.vue";
-import ModalForm from "../modules/addBoccoAPIModal.vue";
+import ModalForm from "../modules/addBoccoModal.vue";
 import Fab from "../modules/fab.vue";
 
 export default {
@@ -44,7 +44,6 @@ export default {
     return {
       title: "BOCCO設定",
       email: "",
-      key: "",
       pass: "",
       fabIcon: "plus",
       isComponentModalActive: false,
@@ -56,7 +55,7 @@ export default {
       this.isComponentModalActive = false;
       console.log(data);
       http
-        .addBocco(data.email, this.key, data.pass)
+        .addBocco(data.email, data.pass)
         .then(response => {
           console.log(response);
           this.getBOCCO();

@@ -119,10 +119,9 @@ class Http {
         return this.api.delete('/message/' + goal_id + '/' + message_call)
     }
 
-    addBocco(email, key, pass) {
+    addBocco(email, pass) {
         return this.api.post('/bocco', {
             email,
-            key,
             pass
         })
     }

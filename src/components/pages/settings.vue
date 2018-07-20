@@ -32,8 +32,8 @@ export default {
       menu_items: [
         { id: 1, title: "子ども一覧", icon: "face" },
         { id: 2, title: "メッセージ設定", icon: "message" },
-        { id: 3, title: "BOCCO設定" },
-        { id: 4, title: "ログアウト", icon: "forward" }
+        { id: 3, title: "BOCCO設定", icon: "robot" },
+        { id: 4, title: "ログアウト", icon: "logout" }
       ]
     };
   },

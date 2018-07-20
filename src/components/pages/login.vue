@@ -5,11 +5,12 @@
                 <p class="modal-card-title">ログイン</p>
             </header>
             <section class="modal-card-body">
-                <b-field label="Name">
+                <b-field label="User">
                     <b-input
                             type="text"
+                            icon="account"
                             v-model="name"
-                            placeholder="Your name"
+                            placeholder="ユーザー名"
                             required>
                     </b-input>
                 </b-field>
@@ -17,9 +18,10 @@
                 <b-field label="Password">
                     <b-input
                             type="password"
+                            icon="key"
                             v-model="password"
                             password-reveal
-                            placeholder="Your password"
+                            placeholder="パスワード"
                             required>
                     </b-input>
                 </b-field>

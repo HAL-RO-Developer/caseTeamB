@@ -5,10 +5,10 @@
         </header>
         <section class="modal-card-body">
             <b-field label="メールアドレス:">
-                <b-input type="email" v-model="data.email"></b-input>
+                <b-input type="email" v-model="data.email" icon="email"></b-input>
             </b-field>
             <b-field label="パスワード:">
-                <b-input type="password" v-model="data.pass"></b-input>
+                <b-input type="password" v-model="data.pass" password-reveal icon="key"></b-input>
             </b-field>
         </section>
         <footer class="modal-card-foot">
