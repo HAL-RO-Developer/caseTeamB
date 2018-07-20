@@ -116,7 +116,7 @@ class Http {
     }
     // メッセージ削除
     removeMessage(goal_id, message_call) {
-        return this.api.delete('/message/' + goal_id +'/'+ message_call)
+        return this.api.delete('/message/' + goal_id + '/' + message_call)
     }
 }
 var http = new Http()
