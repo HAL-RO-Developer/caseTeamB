@@ -5,7 +5,9 @@
             </header>
         <div class="contents">
             <div class="buttons" v-for="item in menu_items" :key="item.id">
-                <span class="button full-width" @click="click(item.id)">{{item.title}}</span>
+                 <span class="button full-width" @click="click(item.id)">
+                  <b-icon icon="chart-line" id="icon">
+                        </b-icon>{{item.title}}</span>         
             </div>
         </div>
         <under-tab :index='2'></under-tab>
@@ -29,7 +31,7 @@ export default {
             title:"設定",
             menu_items: [
                 { id:1, title:'子ども一覧' },
-                { id:2, title:'メッセージ設定' },
+                { id:2, title:'メッセージ' },
                 { id:3, title: '取扱説明書'},
                 { id:4, title:'ログアウト' }
             ]
@@ -56,4 +58,10 @@ export default {
     }
 }
 </script>
+
+<style>
+#icon{
+    margin-right: 2%;
+}
+</style>
 
