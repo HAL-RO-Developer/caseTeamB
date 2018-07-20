@@ -1,6 +1,6 @@
 <template>
     <div>
-      <header class="modal-card-head"style="background: lightcoral">
+      <header class="modal-card-head" style="background: lightcoral">
                 <p class="modal-card-title">{{title}}</p>
             </header>
 

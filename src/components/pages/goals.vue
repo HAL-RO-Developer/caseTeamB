@@ -175,8 +175,7 @@ export default {
         inputAttrs: {
           type: "number",
           placeholder: "目標実行数",
-          value: "0",
-          maxlength: 2
+          value: "0"
         },
         confirmText: "変更",
         type: "is-info",

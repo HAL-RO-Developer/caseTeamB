@@ -26,7 +26,7 @@ import Fab from "../modules/fab.vue";
 import graph from "../modules/graph.vue";
 
 export default {
-  name: "records",
+  //name: "records",
   components: {
     UnderTab,
     AppHeader,
@@ -38,15 +38,18 @@ export default {
     return {
       title: "子ども別グラフ",
       child_id: "",
-      filter: "date",
+      //filter: "date",
       goals: [],
+      chartData: {},
+      settings: {},
       options: {
         children: []
       },
-      isLoading: false,
-
-      chartData: {},
-      settings: {}
+      values: {
+        run: [],
+        criteria: []
+      },
+      isLoading: false
     };
   },
   methods: {
@@ -111,23 +114,36 @@ export default {
     },
     aggregate() {
       var labels = [];
-      var data = [];
+      var run_data = this.values.run;
+      var criteria_data = this.values.criteria;
 
       var child = this.goals.find(item => {
         if (item.child_id == this.child_id) return true;
       });
+
       child.child_goals.forEach(item => {
-        labels.push(item.content)
-        data.push(item.run)
+        labels.push(item.content);
+        run_data.push(item.run);
+        criteria_data.push(item.criteria);
       });
 
       console.log(labels);
-      console.log(data);
+      console.log(run_data);
+      console.log(criteria_data);
+
       var datasets = [
         {
           label: "実行数",
           type: "bar",
-          data: data
+          backgroundColor: '#0000ff',
+          data: run_data
+        },
+        {
+          label: "目標数",
+          type: "bubble",
+          backgroundColor: '#ffa500',
+          lineTension: 0,
+          data: criteria_data
         }
       ];
 
@@ -135,10 +151,12 @@ export default {
         labels: labels,
         datasets: datasets
       };
+
       this.settings = {
         scales: {
           yAxes: [
             {
+              position: "left",
               ticks: {
                 min: 0
               }
