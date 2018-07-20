@@ -31,9 +31,14 @@ export default {
     return {
       title: "目標",
       menu_items: [
+<<<<<<< HEAD
         { id: 1, title: "目標一覧" , icon: "briefcase" },
         { id: 2, title: "目標実行数変更", icon: "redo" },
         { id: 3, title: "子ども別グラフ", icon: "chart-bar" }
+=======
+        { id: 1, title: "目標一覧" },
+        { id: 2, title: "子ども別グラフ" }
+>>>>>>> c69722da1625f61c3897ce9fd63b8f0962bdf7c6
       ]
     };
   },
@@ -44,10 +49,8 @@ export default {
           this.$router.push({ path: "/goals/list" });
           break;
         case 2:
-          this.$router.push({ path: "/messages" });
-          break;
-        case 3:
           this.$router.push({ path: "/goals/graph" });
+          break;
         default:
           break;
       }

@@ -6,7 +6,7 @@
        
         <div class="contents">
             <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-            <div v-for='goal in goals'>
+            <div v-for='goal in goals' :key="goal.id">
             <card v-for='(child_goal, index) in goal.child_goals'
                 :key="index"
                 :goalid="child_goal.goal_id"
@@ -168,27 +168,24 @@ export default {
             })
       });
     },
-    chengeAppro(id, approval) {
+    chengeAppro(id, content) {
       this.$dialog.prompt({
-        title: "目標達成数変更",
-        message: "『" + id + "』を変更しますか？",
+        title: "目標実行数変更",
+        message: "『" + content + "』の実行数を変更しますか？",
         inputAttrs: {
           type: "number",
-          placeholder: "目標達成数",
+          placeholder: "目標実行数",
           value: "0",
-          maxlength: 2,
-          min: 0
+          maxlength: 2
         },
         confirmText: "変更",
+        type: "is-info",
         hasIcon: true,
-        onConfirm: () =>
+        onConfirm: value => {
+          var approval = value;
           http
-            .putAchieved(id, approval)
+            .putAchieved(id, Number(approval))
             .then(response => {
-              var goal_id = localStorage.getItem("goal_id");
-              if ((goal_id = id)) {
-
-              }
               this.getGoal();
             })
             .catch(err => {
@@ -210,15 +207,13 @@ export default {
                     break;
                 }
               }
-            })
+            });
+        }
       });
     },
     select(id) {
       localStorage.setItem("goal_id", id);
       this.selected = id;
-    },
-    GoalDetails(id) {
-      this.$router.push({ path: "goals/details" });
     }
   },
   created() {
