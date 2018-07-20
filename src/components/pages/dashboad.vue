@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <under-tab :index='1'></under-tab>
-    </div>
+  <div>
+    <under-tab :index='1'></under-tab>
+  </div>
 </template>
 
 <script>

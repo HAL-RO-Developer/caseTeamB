@@ -1,9 +1,9 @@
 <template>
-    <footer id="app-footer" class="modal-card-foot">
-        <div class="buttons is-left">
-            <span class="button" @click="$router.go(-1)">戻る</span>
-        </div>
-    </footer>
+  <footer id="app-footer" class="modal-card-foot">
+    <div class="buttons is-left">
+      <span class="button" @click="$router.go(-1)">戻る</span>
+    </div>
+  </footer>
 </template>
 
 <script>

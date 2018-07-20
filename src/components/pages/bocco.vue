@@ -5,10 +5,10 @@
     </header>
 
     <div class="contents">
-        <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-        <card
-          :email="email"
-          @remove="removeBOCCO"></card>
+      <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
+      <card
+        :email="email"
+        @remove="removeBOCCO"></card>
     </div>
 
     <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>

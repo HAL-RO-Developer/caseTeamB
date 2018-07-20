@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <app-header ></app-header>
-        <under-tab></under-tab>
-        <app-footer></app-footer>
-    </div>
+  <div>
+    <app-header ></app-header>
+    <under-tab></under-tab>
+    <app-footer></app-footer>
+  </div>
 </template>
 
 <script>

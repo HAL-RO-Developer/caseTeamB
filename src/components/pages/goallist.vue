@@ -3,7 +3,6 @@
       <header class="modal-card-head" style=" background: lightcoral">
         <p class="modal-card-title">{{title}}</p>
       </header>
-       
     <div class="contents">
       <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
         <div v-for='goal in goals' :key="goal.id">
@@ -26,7 +25,7 @@
     <b-modal :active.sync="isComponentModalActive" has-modal-card>
       <modal-form @add="addGoal"></modal-form>
     </b-modal> 
-    </div>
+  </div>
 </template>
 
 <script>

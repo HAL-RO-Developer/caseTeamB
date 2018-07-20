@@ -1,37 +1,36 @@
 <template>
-    <form action="">
-        <div>
-            <header class="modal-card-head" style="background: mistyrose">
-                <p class="modal-card-title">ログイン</p>
-            </header>
-            <section class="modal-card-body">
-                <b-field label="User">
-                    <b-input
-                            type="text"
-                            icon="account"
-                            v-model="name"
-                            placeholder="ユーザー名"
-                            required>
-                    </b-input>
-                </b-field>
-
-                <b-field label="Password">
-                    <b-input
-                            type="password"
-                            icon="key"
-                            v-model="password"
-                            password-reveal
-                            placeholder="パスワード"
-                            required>
-                    </b-input>
-                </b-field>
-            </section>
-            <footer class="modal-card-foot" style="background: mistyrose">
-                <button class="button" type="button" @click="signup">新規登録</button>
-                <button class="button" type="button" @click="signin">ログイン</button>
-            </footer>
-        </div>
-    </form>
+  <form action="">
+    <div>
+      <header class="modal-card-head" style="background: mistyrose">
+        <p class="modal-card-title">ログイン</p>
+      </header>
+      <section class="modal-card-body">
+        <b-field label="User">
+          <b-input
+            type="text"
+            icon="account"
+            v-model="name"
+            placeholder="ユーザー名"
+            required>
+          </b-input>
+        </b-field>
+        <b-field label="Password">
+          <b-input
+            type="password"
+            icon="key"
+            v-model="password"
+            password-reveal
+            placeholder="パスワード"
+            required>
+          </b-input>
+        </b-field>
+      </section>
+      <footer class="modal-card-foot" style="background: mistyrose">
+        <button class="button" type="button" @click="signup">新規登録</button>
+        <button class="button" type="button" @click="signin">ログイン</button>
+      </footer>
+    </div>
+  </form>
 </template>
 
 <script>

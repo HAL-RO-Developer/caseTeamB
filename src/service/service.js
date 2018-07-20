@@ -118,18 +118,18 @@ class Http {
     removeMessage(goal_id, message_call) {
         return this.api.delete('/message/' + goal_id + '/' + message_call)
     }
-
+    // BOCCO登録
     addBocco(email, pass) {
         return this.api.post('/bocco', {
             email,
             pass
         })
     }
-
+    // BOCCO情報取得
     getBocco() {
         return this.api.get('/bocco')
     }
-
+    // BOCCO削除
     removeBocco() {
         return this.api.delete('/bocco')
     }

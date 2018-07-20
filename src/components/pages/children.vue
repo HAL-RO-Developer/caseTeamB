@@ -1,26 +1,26 @@
 <template>
-    <div>
-            <header class="modal-card-head" style="background: skyblue">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
-        <div class="contents">
-            <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-            <card v-for="(child, index) in children" 
-                :key="index"
-                :id="child.child_id"
-                :nickname="child.nickname" 
-                :sex="child.sex"
-                :selected="selected"
-                @remove="removeChild"
-                @select="select"></card>
-        </div>
-        <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer style="background: skyblue"></app-footer>
-        <under-tab :index='2'></under-tab>
-        <b-modal :active.sync="isComponentModalActive" has-modal-card>
-            <modal-form @add="addChild"></modal-form>
-        </b-modal>
+  <div>
+    <header class="modal-card-head" style="background: skyblue">
+        <p class="modal-card-title">{{title}}</p>
+    </header>
+    <div class="contents">
+      <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
+      <card v-for="(child, index) in children" 
+        :key="index"
+        :id="child.child_id"
+        :nickname="child.nickname" 
+        :sex="child.sex"
+        :selected="selected"
+        @remove="removeChild"
+        @select="select"></card>
     </div>
+    <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
+    <app-footer style="background: skyblue"></app-footer>
+    <under-tab :index='2'></under-tab>
+    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+      <modal-form @add="addChild"></modal-form>
+    </b-modal>
+  </div>
 </template>
 
 <script>

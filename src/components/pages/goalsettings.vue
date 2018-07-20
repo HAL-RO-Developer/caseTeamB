@@ -1,19 +1,20 @@
 <template>
     <div>
       <header class="modal-card-head" style="background: lightcoral">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
-
-        <div class="contents">
-            <div class="buttons" v-for="item in menu_items" :key="item.id">
-                <span class="button full-width" @click="click(item.id)">
-                  <b-icon :icon = item.icon id="icon">
-                        </b-icon>{{item.title}}</span>
-            </div>
+        <p class="modal-card-title">{{title}}</p>
+      </header>
+      <div class="contents">
+        <div class="buttons" v-for="item in menu_items" :key="item.id">
+          <span class="button full-width" @click="click(item.id)">
+            <b-icon :icon = item.icon id="icon"></b-icon>
+            {{item.title}}
+          </span>
         </div>
-        <under-tab :index='1'></under-tab>
-    </div>
+      </div>
+    <under-tab :index='1'></under-tab>
+  </div>
 </template>
+
 <script>
 import http from "../../service/service";
 import UnderTab from "../modules/underTab.vue";

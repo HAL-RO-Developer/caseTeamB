@@ -1,29 +1,27 @@
 <template>
-   <div>
-          <header class="modal-card-head" style="background: lime">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
-           
-        <div class="contents">
-            <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-            <div v-for='message in messages' :key="message.id">
-            <card v-for="(child_message, index) in message.child_messages" 
-                :key="index"
-                :content="child_message.content"
-                :call="child_message.message_call"
-                :message="child_message.message"
-                :id="child_message.goal_id"
-                @remove="removeMessage"
-                ></card>
-            </div>    
-        </div>
-        <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer style="background: lime"></app-footer>
-        <under-tab :index='2'></under-tab>
-        <b-modal :active.sync="isComponentModalActive" has-modal-card>
-            <modal-form @add="addMessage"></modal-form>
-        </b-modal>
+  <div>
+    <header class="modal-card-head" style="background: lime">
+      <p class="modal-card-title">{{title}}</p>
+    </header>   
+    <div class="contents">
+      <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
+      <div v-for='message in messages' :key="message.id">
+      <card v-for="(child_message, index) in message.child_messages" 
+        :key="index"
+        :content="child_message.content"
+        :call="child_message.message_call"
+        :message="child_message.message"
+        :id="child_message.goal_id"
+        @remove="removeMessage"></card>
+      </div>    
     </div>
+    <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
+    <app-footer style="background: lime"></app-footer>
+    <under-tab :index='2'></under-tab>
+    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+      <modal-form @add="addMessage"></modal-form>
+    </b-modal>
+  </div>
 </template>
 
 <script>

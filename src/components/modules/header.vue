@@ -1,7 +1,7 @@
 <template>
-    <header id="app-header" class="modal-card-head">
-        <p class="modal-card-title">{{title}}</p>
-    </header>
+  <header id="app-header" class="modal-card-head">
+    <p class="modal-card-title">{{title}}</p>
+  </header>
 </template>
 
 <script>

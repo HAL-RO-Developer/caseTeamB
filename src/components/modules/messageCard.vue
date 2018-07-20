@@ -2,9 +2,6 @@
     <div class="card">
         <div class="card-content" >
             <div class="media">
-                <div class="media-left">
-                    
-                </div>
                 <div class="media-content">
                     <p class="title is-4">{{message}} </p>
                     <p class="subtitle is-6">{{content}} {{call}}回</p>

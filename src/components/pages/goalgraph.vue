@@ -1,22 +1,21 @@
 <template>
-    <div>
-      <header class="modal-card-head" style="background: coral">
-        <p class="modal-card-title">{{title}}</p>
-      </header>
-        <div class="contents">
-            <b-field>
-              <b-select placeholder="Select a child" v-model="child_id" @input="aggregate"> 
-                    <option v-for="option in options.children" :key="option.child_id" :value="option.child_id">{{option.nickname}}</option>
-                </b-select>
-            </b-field>
-            <!--<by-date ref="date" v-if="filter=='date'" :isLoading="isLoading" @isLoading="isLoading=false"></by-date>-->
-            <!--<by-month ref="month" v-if="filter=='month'" :isLoading="isLoading" @isLoading="isLoading=false"></by-month>-->
-            <graph :chartData='chartData' :options='settings' :width="900" :height="750"></graph>
-        </div> 
-        <app-footer style="background: coral"></app-footer>
-        <under-tab :index='1'></under-tab>
+  <div>
+    <header class="modal-card-head" style="background: coral">
+      <p class="modal-card-title">{{title}}</p>
+    </header>
+    <div class="contents">
+      <b-field>
+        <b-select placeholder="Select a child" v-model="child_id" @input="aggregate"> 
+          <option v-for="option in options.children" :key="option.child_id" :value="option.child_id">{{option.nickname}}</option>
+        </b-select>
+      </b-field>
+      <graph :chartData='chartData' :options='settings' :width="900" :height="750"></graph>
     </div>
+    <app-footer style="background: coral"></app-footer>
+    <under-tab :index='1'></under-tab>
+  </div>
 </template>
+
 <script>
 import http from "../../service/service";
 import UnderTab from "../modules/underTab.vue";

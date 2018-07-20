@@ -2,9 +2,6 @@
     <div class="card">
         <div class="card-content" @click="select">
             <div class="media">
-                <div class="media-left">
-                    
-                </div>
                 <div class="media-content">
                     <p class="title is-4">{{content}}</p>
                     <p class="subtitle is-6">{{nickname}}:{{run}}回 目標:{{criteria}}回</p>
