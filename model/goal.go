@@ -24,3 +24,10 @@ type CustomMessage struct {
 	MessageCall int    `json:"message_call"` // メッセージ発信条件
 	Message     string `json:"message"`      // メッセージ内容
 }
+
+// メッセージ
+type DefaultMessage struct {
+	Model
+	MsgCondition int    `json:"msg_condition"` // メッセージ発信条件
+	Message      string `json:"message"`       // メッセージ内容
+}

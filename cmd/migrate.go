@@ -13,6 +13,7 @@ func main() {
 	db.DropTableIfExists(&model.Bocco{})
 	db.DropTableIfExists(&model.GoalData{})
 	db.DropTableIfExists(&model.CustomMessage{})
+	db.DropTableIfExists(&model.DefaultMessage{})
 
 	db.AutoMigrate(&model.User{})
 	db.AutoMigrate(&model.UserChild{})
@@ -20,4 +21,5 @@ func main() {
 	db.AutoMigrate(&model.Bocco{})
 	db.AutoMigrate(&model.GoalData{})
 	db.AutoMigrate(&model.CustomMessage{})
+	db.AutoMigrate(&model.DefaultMessage{})
 }

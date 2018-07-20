@@ -128,7 +128,6 @@ func RegistrationBoccoInfo(name string, email string, key string, pass string) e
 	bocco := model.Bocco{
 		Name:  name,
 		Email: email,
-		Key:   key,
 		Pass:  pass,
 	}
 	err := db.Create(&bocco).Error

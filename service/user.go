@@ -54,6 +54,16 @@ func GetChildInfo(name string) ([]model.UserChild, bool) {
 	return children, true
 }
 
+// 子ども情報取得
+func GetOneChildInfo(name string, childId int) ([]model.UserChild, bool) {
+	var children []model.UserChild
+	err := db.Where("name = ? and child_id = ?", name, childId).Find(&children).Error
+	if err != nil {
+		return nil, false
+	}
+	return children, true
+}
+
 // 最初に見つけたこどもID情報削除
 func DeleteChildFirst(name string) bool {
 	var child model.UserChild
