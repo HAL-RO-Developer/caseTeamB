@@ -30,10 +30,10 @@ export default {
     return {
       title: "設定",
       menu_items: [
-        { id: 1, title: "子ども一覧" , icon: "face" },
-        { id: 2, title: "メッセージ設定" , icon: "message"},
-        { id: 3, title: "ログアウト" , icon: "forward"}
-
+        { id: 1, title: "子ども一覧", icon: "face" },
+        { id: 2, title: "メッセージ設定", icon: "message" },
+        { id: 3, title: "BOCCO設定" },
+        { id: 4, title: "ログアウト", icon: "forward" }
       ]
     };
   },
@@ -45,6 +45,9 @@ export default {
           break;
         case 2:
           this.$router.push({ path: "/messages" });
+          break;
+        case 3:
+          this.$router.push({ path: "/bocco" });
           break;
         default:
           http.RemoveToken();

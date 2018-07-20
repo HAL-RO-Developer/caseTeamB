@@ -1,30 +1,30 @@
 <template>
     <div>
-                    <header class="modal-card-head" style=" background: lightgreen">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
-        <div class="contents">
-            <button class="button is-medium is-primary full-width" type="button" @click="registDevice">PINコード発行</button>
-            <section class="modal-card-body">
-                <b-input
-                    type="text"
-                    v-model="pin"
-                    placeholder="ここにPINコードが表示されます。"
-                    readonly>
-                </b-input>
-            </section>
-            <div class="subtitle is-5">【デバイスリスト】：{{devices.nickname}}</div>
-            <div class="list">
-                <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-                <card v-for="(device, index) in devices.child_devices" 
-                    :key="index"
-                    :deviceId="device"
-                    @remove="removeDevice">
-                </card>
-            </div>
+      <header class="modal-card-head" style=" background: lightgreen">
+        <p class="modal-card-title">{{title}}</p>
+      </header>
+    <div class="contents">
+      <button class="button is-medium is-primary full-width" type="button" @click="registDevice">PINコード発行</button>
+      <section class="modal-card-body">
+        <b-input
+          type="text"
+          v-model="pin"
+          placeholder="ここにPINコードが表示されます。"
+          readonly>
+        </b-input>
+      </section>
+        <div class="subtitle is-5">【デバイスリスト】：{{devices.nickname}}</div>
+          <div class="list">
+              <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
+              <card v-for="(device, index) in devices.child_devices" 
+                  :key="index"
+                  :deviceId="device"
+                  @remove="removeDevice">
+              </card>
+          </div>
         </div>
-        <fab :icon="fabIcon" @click="getDevice"></fab>
-        <under-tab :index='0'></under-tab>
+    <fab :icon="fabIcon" @click="getDevice"></fab>
+    <under-tab :index='0'></under-tab>
     </div>
 </template>
 

@@ -118,6 +118,22 @@ class Http {
     removeMessage(goal_id, message_call) {
         return this.api.delete('/message/' + goal_id + '/' + message_call)
     }
+
+    addBocco(email, key, pass) {
+        return this.api.post('/bocco', {
+            email,
+            key,
+            pass
+        })
+    }
+
+    getBocco() {
+        return this.api.get('/bocco')
+    }
+
+    removeBocco() {
+        return this.api.delete('/bocco')
+    }
 }
 var http = new Http()
 export default http;

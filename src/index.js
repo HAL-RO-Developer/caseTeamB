@@ -8,6 +8,7 @@ import GoalList from './components/pages/goallist.vue'
 import Graph from './components/pages/goalgraph.vue'
 import Children from './components/pages/children.vue'
 import Messages from './components/pages/messages.vue'
+import BOCCO from './components/pages/bocco.vue'
 import Settings from './components/pages/settings.vue'
 import NotFound from './components/pages/notFound.vue'
 import Buefy from 'buefy'
@@ -25,6 +26,7 @@ const routes = [
     { path: "/goals/graph", component: Graph },
     { path: "/children", component: Children },
     { path: "/messages", component: Messages },
+    { path: "/bocco", component: BOCCO },
     { path: "/settings", component: Settings },
     { path: "*", component: NotFound },
 ]
