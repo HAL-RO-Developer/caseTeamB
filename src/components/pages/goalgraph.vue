@@ -115,6 +115,8 @@ export default {
       var labels = [];
       var run_data = this.values.run;
       var criteria_data = this.values.criteria;
+      var r_randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      var c_randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
       var child = this.goals.find(item => {
         if (item.child_id == this.child_id) return true;
@@ -134,13 +136,13 @@ export default {
         {
           label: "実行数",
           type: "bar",
-          backgroundColor: ['#C28535', '#8AAE56', '#B66C46'],
+          backgroundColor: r_randomColor,
           data: run_data
         },
         {
           label: "目標数",
-          type: "bubble",
-          backgroundColor: "#000000",
+          type: "bar",
+          backgroundColor: c_randomColor,
           data: criteria_data
         }
       ];
