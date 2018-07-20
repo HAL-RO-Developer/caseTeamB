@@ -6,7 +6,9 @@
 
         <div class="contents">
             <div class="buttons" v-for="item in menu_items" :key="item.id">
-                <span class="button full-width" @click="click(item.id)">{{item.title}}</span>
+                <span class="button full-width" @click="click(item.id)">
+                  <b-icon :icon = item.icon id="icon">
+                        </b-icon>{{item.title}}</span>
             </div>
         </div>
         <under-tab :index='1'></under-tab>
@@ -29,8 +31,8 @@ export default {
     return {
       title: "目標",
       menu_items: [
-        { id: 1, title: "目標一覧" },
-        { id: 2, title: "子ども別グラフ" }
+        { id: 1, title: "目標一覧" , icon: "briefcase" },
+        { id: 2, title: "子ども別グラフ", icon: "chart-bar" }
       ]
     };
   },
@@ -51,3 +53,8 @@ export default {
 };
 </script>
 
+<style>
+#icon{
+  margin-right: 2%
+}
+</style>

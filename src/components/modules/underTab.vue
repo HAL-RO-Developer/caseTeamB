@@ -2,7 +2,7 @@
     <section id="undertab"  class="container">
     <b-tabs type="is-toggle" v-model="IndexModel" @change="change" expanded>
         <b-tab-item label="登録" icon="file-import"></b-tab-item>
-        <b-tab-item label="目標" icon="calendar-check"></b-tab-item>
+        <b-tab-item label="目標" icon="check-circle"></b-tab-item>
         <b-tab-item label="設定" icon="settings"></b-tab-item>
     </b-tabs>
     </section>
