@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     info() {
-      this.$emit("info", this.goalid);
+      this.$emit("info", this.goalid, this.content);
     },
     remove() {
       this.$emit("remove", this.goalid, this.content);
