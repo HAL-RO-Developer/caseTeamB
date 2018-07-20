@@ -118,7 +118,7 @@ export default {
           }
         });
     },
-    removeMessage(id, call,content) {
+    removeMessage(id, call, content) {
       this.$dialog.confirm({
         title: "メッセージ削除",
         message: "『" + content + "の" + call + "回目" + "』を削除しますか？",

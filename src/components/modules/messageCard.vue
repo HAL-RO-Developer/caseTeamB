@@ -20,22 +20,20 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                options: {
-                    condition:[
-
-                    ]
-                }
-            }
-        },
-        methods:{
-            edit(){},
-            remove(){
-                this.$emit('remove', this.id,this.call,this.content )
-            }
-        },
-        props:['content','call','message','id']
+export default {
+  data() {
+    return {
+      options: {
+        condition: []
+      }
+    };
+  },
+  methods: {
+    edit() {},
+    remove() {
+      this.$emit("remove", this.id, this.call, this.content);
     }
+  },
+  props: ["content", "call", "message", "id"]
+};
 </script>

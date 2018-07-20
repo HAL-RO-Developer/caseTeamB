@@ -56,8 +56,8 @@ export default {
 </script>
 
 <style>
-#icon{
-    margin-right: 2%;
+#icon {
+  margin-right: 2%;
 }
 </style>
 

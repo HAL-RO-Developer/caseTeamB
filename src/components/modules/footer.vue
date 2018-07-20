@@ -8,21 +8,20 @@
 
 <script>
 export default {
-    name :"app-footer",
-    props:[],
-    data() {
-        return {
-        }
-    }
-}
+  name: "app-footer",
+  props: [],
+  data() {
+    return {};
+  }
+};
 </script>
 
 <style>
-    #app-footer{
-        display: block;
-        position: fixed;
-        width: 100%;
-        bottom: 40px;
-        left:0px;
-    }
+#app-footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  bottom: 40px;
+  left: 0px;
+}
 </style>

@@ -31,7 +31,7 @@ export default {
     return {
       title: "目標",
       menu_items: [
-        { id: 1, title: "目標一覧" , icon: "briefcase" },
+        { id: 1, title: "目標一覧", icon: "briefcase" },
         { id: 2, title: "子ども別グラフ", icon: "chart-bar" }
       ]
     };
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style>
-#icon{
-  margin-right: 2%
+#icon {
+  margin-right: 2%;
 }
 </style>

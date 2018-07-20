@@ -135,13 +135,13 @@ export default {
         {
           label: "実行数",
           type: "bar",
-          backgroundColor: '#0000ff',
+          backgroundColor: "#0000ff",
           data: run_data
         },
         {
           label: "目標数",
           type: "bubble",
-          backgroundColor: '#ffa500',
+          backgroundColor: "#ffa500",
           lineTension: 0,
           data: criteria_data
         }

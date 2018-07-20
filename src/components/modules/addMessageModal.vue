@@ -26,7 +26,7 @@ export default {
         goal_id: "",
         message_call: null,
         message: ""
-      },
+      }
     };
   },
   methods: {

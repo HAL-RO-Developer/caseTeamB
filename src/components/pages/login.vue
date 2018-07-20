@@ -33,84 +33,86 @@
 </template>
 
 <script>
-import axios from 'axios'
-import http from '../../service/service'
+import axios from "axios";
+import http from "../../service/service";
 export default {
-    data() {
-        return {
-            name: "",
-            password: "" ,
-            flag : 0
-        }
+  data() {
+    return {
+      name: "",
+      password: "",
+      flag: 0
+    };
+  },
+  methods: {
+    signup() {
+      http
+        .signup(this.name, this.password)
+        .then(response => {
+          console.log(response);
+          this.$dialog.alert({
+            title: "ユーザー作成",
+            message: response.data.success,
+            type: "is-info",
+            hasIcon: true,
+            icon: "times-circle",
+            iconPack: "fa"
+          });
+          this.flag = 1;
+          this.signin();
+        })
+        .catch(err => {
+          if (err) {
+            this.$dialog.alert({
+              title: "Error",
+              message: err.response.data.error,
+              type: "is-danger",
+              hasIcon: true,
+              icon: "times-circle",
+              iconPack: "fa"
+            });
+            switch (err.response.status) {
+              case 401:
+                http.RemoveToken();
+                this.$router.push({ path: "/" });
+                break;
+              default:
+                break;
+            }
+          }
+        });
     },
-    methods:{
-        signup(){
-            http.signup(this.name, this.password)
-            .then((response)=>{
-                console.log(response)
-                this.$dialog.alert({
-                        title: 'ユーザー作成',
-                        message: response.data.success,
-                        type: 'is-info',
-                        hasIcon: true,
-                        icon: 'times-circle',
-                        iconPack: 'fa'
-                })
-                this.flag = 1;
-                this.signin()
-            })
-            .catch((err)=>{
-                if(err){
-                    this.$dialog.alert({
-                        title: 'Error',
-                        message: err.response.data.error,
-                        type: 'is-danger',
-                        hasIcon: true,
-                        icon: 'times-circle',
-                        iconPack: 'fa'
-                    })
-                    switch(err.response.status){
-                        case 401:
-                            http.RemoveToken()
-                            this.$router.push({path:'/'})
-                            break;
-                        default:
-                            break;
-                    }
-                }
+    signin() {
+      http
+        .signin(this.name, this.password)
+        .then(response => {
+          http.SetToken(response.data.token);
+          if (this.flag == 1) {
+            this.$router.push({ path: "/children" });
+          } else {
+            this.$router.push({ path: "/" });
+          }
+        })
+        .catch(err => {
+          if (err) {
+            this.$dialog.alert({
+              title: "Error",
+              message: err.response.data.error,
+              type: "is-danger",
+              hasIcon: true,
+              icon: "times-circle",
+              iconPack: "fa"
             });
-        },
-        signin(){
-            http.signin(this.name, this.password)
-            .then((response)=> { 
-                http.SetToken(response.data.token);
-                if(this.flag == 1){
-                this.$router.push({ path: '/children' })
-                }else {
-                this.$router.push({ path: '/' })
-                }
-            })
-            .catch((err)=> {
-                if(err){
-                    this.$dialog.alert({
-                        title: 'Error',
-                        message: err.response.data.error,
-                        type: 'is-danger',
-                        hasIcon: true,
-                        icon: 'times-circle',
-                        iconPack: 'fa'
-                    })
-                    switch(err.response.status){
-                        case 401:
-                            this.$router.push({path:'/'})
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-        }
+            switch (err.response.status) {
+              case 401:
+                this.$router.push({ path: "/" });
+                break;
+              default:
+                break;
+            }
+          }
+        });
     }
-}
+  }
+};
 </script>
 

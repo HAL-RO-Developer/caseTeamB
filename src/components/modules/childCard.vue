@@ -46,7 +46,6 @@ export default {
       : {
           icon: "gender-male",
           type: "is-info"
-
         };
   },
   props: ["id", "nickname", "sex", "selected"]
