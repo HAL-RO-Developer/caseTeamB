@@ -1,34 +1,34 @@
 <template>
     <div>
-             <header class="modal-card-head" style=" background: lightcoral">
-                <p class="modal-card-title">{{title}}</p>
-            </header>
+      <header class="modal-card-head" style=" background: lightcoral">
+        <p class="modal-card-title">{{title}}</p>
+      </header>
        
-        <div class="contents">
-            <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
-            <div v-for='goal in goals' :key="goal.id">
-            <card v-for='(child_goal, index) in goal.child_goals'
-                :key="index"
-                :goalid="child_goal.goal_id"
-                :nickname="goal.nickname"
-                :content="child_goal.content" 
-                :run="child_goal.run"
-                :criteria="child_goal.criteria"
-                :selected="selected"
-                @info="chengeAppro"
-                @remove="removeGoal"
-                @select="select"></card>
-            </div>
+    <div class="contents">
+      <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
+        <div v-for='goal in goals' :key="goal.id">
+          <card v-for='(child_goal, index) in goal.child_goals'
+            :key="index"
+            :goalid="child_goal.goal_id"
+            :nickname="goal.nickname"
+            :content="child_goal.content" 
+            :run="child_goal.run"
+            :criteria="child_goal.criteria"
+            :selected="selected"
+            @info="chengeAppro"
+            @remove="removeGoal"
+            @select="select"></card>
         </div>
-        <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-        <app-footer style=" background: lightcoral"></app-footer>
-        <under-tab :index='1'></under-tab>
-        <b-modal :active.sync="isComponentModalActive" has-modal-card>
-            <modal-form @add="addGoal"></modal-form>
-        </b-modal>
-        
+    </div>
+    <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
+    <app-footer style=" background: lightcoral"></app-footer>
+    <under-tab :index='1'></under-tab>
+    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+      <modal-form @add="addGoal"></modal-form>
+    </b-modal> 
     </div>
 </template>
+
 <script>
 import moment from "moment";
 import http from "../../service/service";

@@ -26,7 +26,7 @@ import Fab from "../modules/fab.vue";
 import graph from "../modules/graph.vue";
 
 export default {
-  //name: "records",
+  name: "graphs",
   components: {
     UnderTab,
     AppHeader,
