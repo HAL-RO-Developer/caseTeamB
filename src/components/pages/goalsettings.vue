@@ -30,8 +30,7 @@ export default {
       title: "目標",
       menu_items: [
         { id: 1, title: "目標一覧" },
-        { id: 2, title: "目標実行数変更" },
-        { id: 3, title: "子ども別グラフ" }
+        { id: 2, title: "子ども別グラフ" }
       ]
     };
   },
@@ -42,10 +41,8 @@ export default {
           this.$router.push({ path: "/goals/list" });
           break;
         case 2:
-          this.$router.push({ path: "/messages" });
-          break;
-        case 3:
           this.$router.push({ path: "/goals/graph" });
+          break;
         default:
           break;
       }

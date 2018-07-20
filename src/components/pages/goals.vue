@@ -214,9 +214,6 @@ export default {
     select(id) {
       localStorage.setItem("goal_id", id);
       this.selected = id;
-    },
-    GoalDetails(id) {
-      this.$router.push({ path: "goals/details" });
     }
   },
   created() {
