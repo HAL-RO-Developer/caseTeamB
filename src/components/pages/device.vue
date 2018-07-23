@@ -3,7 +3,7 @@
     <header class="modal-card-head" style=" background: lightgreen">
       <p class="modal-card-title">{{title}}</p>
     </header>
-    <div class="contents">
+    <div>
       <button class="button is-medium is-primary tex center" type="button" @click="registDevice" style="margin-left: 25%">PINコード発行</button>
       <section class="modal-card-body">
         <b-input
@@ -14,7 +14,7 @@
         </b-input>
       </section>
       <div class="subtitle is-5">【デバイスリスト】：{{devices.nickname}}</div>
-      <div class="list" style="heighr: 100%">
+      <div class="contents" style="heighr: 100%">
         <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
         <card v-for="(device, index) in devices.child_devices" 
           :key="index"
