@@ -9,7 +9,7 @@
                 <b-icon v-if="selected==goalid" icon="check"></b-icon>
                 <div class="media-right">
                     <button class="button is-info" @click="info">
-                        <b-icon icon="exclamation"></b-icon>
+                        <b-icon icon="pencil"></b-icon>
                     </button>
                     <button class="button is-danger" @click="remove">
                         <b-icon icon="delete"></b-icon>
