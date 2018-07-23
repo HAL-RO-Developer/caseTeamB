@@ -3,7 +3,7 @@
       <header class="modal-card-head" style=" background: lightcoral">
         <p class="modal-card-title">{{title}}</p>
       </header>
-    <div class="contents">
+    <div class="contents" style="heighr: 100%">
       <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
         <div v-for='goal in goals' :key="goal.id">
           <card v-for='(child_goal, index) in goal.child_goals'
