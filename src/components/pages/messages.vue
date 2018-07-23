@@ -3,7 +3,7 @@
     <header class="modal-card-head" style="background: lime">
       <p class="modal-card-title">{{title}}</p>
     </header>   
-    <div class="contents">
+    <div class="contents" style="heighr: 100%">
       <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
       <div v-for='message in messages' :key="message.id">
       <card v-for="(child_message, index) in message.child_messages" 

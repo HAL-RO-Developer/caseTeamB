@@ -1,10 +1,10 @@
 <template>
   <div>
-    <header class="modal-card-head" style="background: lime">
+    <header class="modal-card-head" style="background: blueviolet">
       <p class="modal-card-title">{{title}}</p>
     </header>
 
-    <div class="contents">
+    <div class="contents" style="heighr: 100%">
       <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
       <card
         :email="email"
@@ -12,7 +12,7 @@
     </div>
 
     <fab :icon="fabIcon" @click="isComponentModalActive = true"></fab>
-    <app-footer style="background: lime"></app-footer>
+    <app-footer style="background: blueviolet"></app-footer>
     <under-tab :index='2'></under-tab>
     <b-modal :active.sync="isComponentModalActive" has-modal-card>
       <modal-form @add="addBOCCO"></modal-form>

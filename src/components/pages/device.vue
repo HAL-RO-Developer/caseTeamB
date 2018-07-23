@@ -14,7 +14,7 @@
         </b-input>
       </section>
       <div class="subtitle is-5">【デバイスリスト】：{{devices.nickname}}</div>
-      <div class="list">
+      <div class="list" style="heighr: 100%">
         <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
         <card v-for="(device, index) in devices.child_devices" 
           :key="index"
