@@ -26,8 +26,8 @@
         </b-field>
       </section>
       <footer class="modal-card-foot" style="background: mistyrose">
-        <button class="button" type="button" @click="signup">新規登録</button>
-        <button class="button" type="button" @click="signin">ログイン</button>
+        <button class="button" type="button" @click="signup"><b-icon icon = "pen" id="icon"></b-icon>新規登録</button>
+        <button class="button" type="button" @click="signin"><b-icon icon = "login" id="icon"></b-icon>ログイン</button>
       </footer>
     </div>
   </form>
@@ -117,3 +117,8 @@ export default {
 };
 </script>
 
+<style>
+#icon {
+  margin-right: 2%;
+}
+</style>
