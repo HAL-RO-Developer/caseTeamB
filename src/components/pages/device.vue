@@ -4,7 +4,7 @@
       <p class="modal-card-title">{{title}}</p>
     </header>
     <div class="contents">
-      <button class="button is-medium is-primary full-width" type="button" @click="registDevice">PINコード発行</button>
+      <button class="button is-medium is-primary tex center" type="button" @click="registDevice" style="margin-left: 25%">PINコード発行</button>
       <section class="modal-card-body">
         <b-input
           type="text"
