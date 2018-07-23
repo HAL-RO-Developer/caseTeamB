@@ -3,8 +3,8 @@
     <header class="modal-card-head" style=" background: lightgreen">
       <p class="modal-card-title">{{title}}</p>
     </header>
-    <div>
-      <button class="button is-medium is-primary tex center" type="button" @click="registDevice" style="margin-left: 25%">PINコード発行</button>
+    <div id="pin">
+      <button class="button is-medium is-primary tex" type="button" @click="registDevice" style="margin-left: 30%">PINコード発行</button>
       <section class="modal-card-body">
         <b-input
           type="text"
@@ -181,5 +181,10 @@ button {
   position: relative;
   overflow: auto;
   height: 43vh;
+}
+#pin{
+    position: relative;
+    margin-top: 2vh;
+
 }
 </style>
