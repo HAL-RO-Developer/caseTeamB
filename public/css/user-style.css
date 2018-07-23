@@ -1,10 +1,10 @@
-.contents{
-    position: relative;
-    margin-top: 5vh;
-    height: 65vh;
-    overflow: auto;
-}
+
 
 .full-width{
     width: 100%;
+}.contents{
+    position: relative;
+    margin-top: 2vh;
+    height: 70vh;
+    overflow: auto;
 }
