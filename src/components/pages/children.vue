@@ -3,7 +3,7 @@
     <header class="modal-card-head" style="background: skyblue">
         <p class="modal-card-title">{{title}}</p>
     </header>
-    <div class="contents">
+    <div class="contents" style="heighr: 100%">
       <b-loading :is-full-page="false" :active.sync="isLoading" :can-cancel="true"></b-loading>
       <card v-for="(child, index) in children" 
         :key="index"
