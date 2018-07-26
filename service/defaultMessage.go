@@ -1,33 +1,33 @@
 package service
 
 import (
+	"github.com/HAL-RO-Developer/caseTeamB/model"
 	"math/rand"
 	"time"
-	"github.com/HAL-RO-Developer/caseTeamB/model"
 )
 
 type Condition struct {
 	Birthday time.Time
-	Run int
+	Run      int
 	Criteria int
-	Limit *time.Time
+	Limit    *time.Time
 }
 
 const RUNGOAl = 5 // 目標達成数の条件
 const REST = 0.7
 
 // デフォルトメッセージの取得
-func GetDefaultMessage(birthday time.Time,run int, criteria int, limit *time.Time) (model.DefaultMessage, bool){
+func GetDefaultMessage(birthday time.Time, run int, criteria int, limit *time.Time) (model.DefaultMessage, bool) {
 	var messages []model.DefaultMessage
 	var find bool
 	var condition Condition
 	var useCondition []int
-	
+
 	condition.Birthday = birthday
 	condition.Run = run
 	condition.Criteria = criteria
 	condition.Limit = limit
-	
+
 	// 満たしている条件を取得
 	useCondition = getCondition(condition)
 	if len(useCondition) != 0 {
@@ -53,7 +53,7 @@ func getRandomNo(num int) int {
 
 func getCondition(condition Condition) []int {
 	var useCondition []int
-	
+
 	// 目標達成時
 	if condition.Run == condition.Criteria {
 		if condition.Limit != nil {

@@ -1,13 +1,14 @@
 package controller
 
 import (
+	"fmt"
 	"github.com/HAL-RO-Developer/caseTeamB/controller/response"
 	"github.com/HAL-RO-Developer/caseTeamB/controller/validation"
 	"github.com/HAL-RO-Developer/caseTeamB/service"
 	"github.com/gin-gonic/gin"
 	"github.com/satori/go.uuid"
 	_ "github.com/satori/go.uuid"
-	"fmt"
+	"github.com/makki0205/config"
 )
 
 var Button = buttonimpl{}
@@ -45,19 +46,19 @@ func (b *buttonimpl) DeviceIncrement(c *gin.Context) {
 		}
 		message, find := service.GetMessageFromGoal(data[0].GoalId)
 		if !find {
-			deviceInfo,_ := service.GetDeviceInfoFromDeviceId(req.DeviceId)
-			childInfo,_ := service.GetOneChildInfo(deviceInfo[0].Name, deviceInfo[0].ChildId)
+			deviceInfo, _ := service.GetDeviceInfoFromDeviceId(req.DeviceId)
+			childInfo, _ := service.GetOneChildInfo(deviceInfo[0].Name, deviceInfo[0].ChildId)
 			goalInfo, _ := service.GetGoalFromDeviceId(req.DeviceId)
-			defMsg,_ := service.GetDefaultMessage(childInfo[0].BirthDay, goalInfo[0].Run, goalInfo[0].Criteria,goalInfo[0].Deadline)
-			
+			defMsg, _ := service.GetDefaultMessage(childInfo[0].BirthDay, goalInfo[0].Run, goalInfo[0].Criteria, goalInfo[0].Deadline)
+
 			switch defMsg.MsgCondition {
 			case 2:
 			case 3:
-				msg = fmt.Sprintf(defMsg.Message ,childInfo[0].NickName)
+				msg = fmt.Sprintf(defMsg.Message, childInfo[0].NickName)
 			case 4:
-				msg = fmt.Sprintf(defMsg.Message ,childInfo[0].NickName, goalInfo[0].Criteria - goalInfo[0].Run)
+				msg = fmt.Sprintf(defMsg.Message, childInfo[0].NickName, goalInfo[0].Criteria-goalInfo[0].Run)
 			case 5:
-				msg = fmt.Sprintf(defMsg.Message ,childInfo[0].NickName, goalInfo[0].Run)
+				msg = fmt.Sprintf(defMsg.Message, childInfo[0].NickName, goalInfo[0].Run)
 			default:
 				msg = defMsg.Message
 			}
@@ -84,7 +85,7 @@ func talkBocco(message string, name string) {
 	if !find {
 		return
 	}
-	boccoToken, _ := service.GetBoccoToken(boccoInfo[0].Email, service.APIKEY, boccoInfo[0].Pass)
+	boccoToken, _ := service.GetBoccoToken(boccoInfo[0].Email, config.Env("apikey"), boccoInfo[0].Pass)
 	roomId, _ := service.GetRoomId(boccoToken)
 	uuid := uuid.Must(uuid.NewV4()).String()
 	service.SendMessage(uuid, roomId, boccoToken, message)

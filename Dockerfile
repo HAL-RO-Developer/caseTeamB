@@ -1,18 +1,21 @@
-FROM makki0205/deploy
+FROM alpine:3.6
+WORKDIR /root
+ENV GO_ENV develop
 
-WORKDIR /go/src/github.com/HAL-RO-Developer/caseTeamB
+RUN set -x \
+  && apk upgrade --no-cache \
+  && apk --update add tzdata \
+  && cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+  && apk del tzdata \
+  && rm -rf /var/cache/apk/*
 
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+ADD ./main .
+ADD ./public ./public
+ADD ./view ./view
+ADD ./config.yml ./config.yml
 
-ADD ./ ./
+EXPOSE 8000
 
-RUN npm i
-RUN npm run build
-
-RUN go get github.com/satori/go.uuid
-RUN cp config.yml.template config.yml
-
-RUN ls -la
-
-EXPOSE 8080
-
-ENTRYPOINT ["go","run","main.go"]
+# Run it
+ENTRYPOINT ["./main"]
