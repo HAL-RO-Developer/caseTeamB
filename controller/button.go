@@ -6,9 +6,7 @@ import (
 	"github.com/HAL-RO-Developer/caseTeamB/controller/validation"
 	"github.com/HAL-RO-Developer/caseTeamB/service"
 	"github.com/gin-gonic/gin"
-	"github.com/satori/go.uuid"
 	_ "github.com/satori/go.uuid"
-	"github.com/makki0205/config"
 )
 
 var Button = buttonimpl{}
@@ -62,14 +60,14 @@ func (b *buttonimpl) DeviceIncrement(c *gin.Context) {
 			default:
 				msg = defMsg.Message
 			}
-			talkBocco(msg, deviceInfo[0].Name)
+			service.TalkBocco(msg, deviceInfo[0].Name)
 			response.Json(gin.H{"angle": int(progress)}, c)
 			return
 		}
 		for i := 0; i < len(message); i++ {
 			// 目標の実行回数がメッセージの発信条件を満たした時
 			if data[0].Run == message[i].MessageCall {
-				talkBocco(message[i].Message, bocco[0].Name)
+				service.TalkBocco(message[i].Message, bocco[0].Name)
 				break
 			}
 		}
@@ -78,15 +76,4 @@ func (b *buttonimpl) DeviceIncrement(c *gin.Context) {
 		return
 	}
 	response.Json(gin.H{"angle": "デバイスIDが見つかりません。"}, c)
-}
-
-func talkBocco(message string, name string) {
-	boccoInfo, find := service.ExisByBoccoAPI(name)
-	if !find {
-		return
-	}
-	boccoToken, _ := service.GetBoccoToken(boccoInfo[0].Email, config.Env("apikey"), boccoInfo[0].Pass)
-	roomId, _ := service.GetRoomId(boccoToken)
-	uuid := uuid.Must(uuid.NewV4()).String()
-	service.SendMessage(uuid, roomId, boccoToken, message)
 }

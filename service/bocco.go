@@ -12,6 +12,8 @@ import (
 	"net/http/httputil"
 
 	"github.com/HAL-RO-Developer/caseTeamB/model"
+	"github.com/makki0205/config"
+	"github.com/satori/go.uuid"
 )
 
 type GetToken struct {
@@ -50,6 +52,9 @@ func GetBoccoToken(email string, key string, pass string) (string, bool) {
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
+		return "", false
+	}
+	if resp.Status == "401 Unauthorized"{
 		return "", false
 	}
 	defer resp.Body.Close()
@@ -139,4 +144,15 @@ func DeleteBoccoInfo(name string) {
 	var bocco model.Bocco
 	db.Where("name = ?", name).First(&bocco)
 	db.Delete(bocco)
+}
+
+func TalkBocco(message string, name string) {
+	boccoInfo, find := ExisByBoccoAPI(name)
+	if !find {
+		return
+	}
+	boccoToken, _ := GetBoccoToken(boccoInfo[0].Email, config.Env("apikey"), boccoInfo[0].Pass)
+	roomId, _ := GetRoomId(boccoToken)
+	uuid := uuid.Must(uuid.NewV4()).String()
+	SendMessage(uuid, roomId, boccoToken, message)
 }

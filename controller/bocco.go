@@ -34,7 +34,7 @@ func (b *boccoimpl) RegistBocco(c *gin.Context) {
 
 	_, ok = service.GetBoccoToken(req.Email, config.Env("apikey"), req.Password)
 	if !ok {
-		response.BadRequest(gin.H{"error": "アクセストークンが取得できませんでした。"}, c)
+		response.BadRequest(gin.H{"error": "BOCCOAPIのアクセストークンが取得できませんでした。"}, c)
 		return
 	}
 
