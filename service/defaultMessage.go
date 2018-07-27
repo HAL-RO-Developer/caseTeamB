@@ -17,13 +17,12 @@ const RUNGOAl = 5 // 目標達成数の条件
 const REST = 0.7
 
 // デフォルトメッセージの取得
-func GetDefaultMessage(birthday time.Time, run int, criteria int, limit *time.Time) (model.DefaultMessage, bool) {
+func GetDefaultMessage(run int, criteria int, limit *time.Time) (model.DefaultMessage, bool) {
 	var messages []model.DefaultMessage
 	var find bool
 	var condition Condition
 	var useCondition []int
-
-	condition.Birthday = birthday
+	
 	condition.Run = run
 	condition.Criteria = criteria
 	condition.Limit = limit
@@ -35,7 +34,7 @@ func GetDefaultMessage(birthday time.Time, run int, criteria int, limit *time.Ti
 		if !find {
 			return model.DefaultMessage{}, false
 		}
-		return messages[len(messages)], true
+		return messages[getRandomNo(len(messages))], true
 	}
 	return model.DefaultMessage{}, false
 }
